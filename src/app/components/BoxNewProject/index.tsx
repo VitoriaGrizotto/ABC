@@ -32,34 +32,43 @@ const BoxNewProject: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     &times; {/* This is the "X" icon */}
                 </button>
                 <form onSubmit={handleSubmit} className="flex flex-col items-center">
-                    <h2 className="text-center mb-[10px]">Novo Projeto</h2>
+                <h2 className="font-sans text-center mb-7 text-[#717171] text-xl" style={{ position: 'relative', top: '-125px' }}>Novo Projeto</h2>
+
                     <Input 
-                        name='title'
-                        placeholder='Título do projeto *'
+                        label="Título do projeto" // Use 'label' to pass text for title
+                        name="Título do projeto *"
                         value={inputValues.title}
                         onChange={handleChange}
+                        labelClass="text-sm" // Decrease font size for label
                     />
+                    
                     <Input
-                        name='area'
-                        placeholder='Área responsável *'
+                        label="Área responsável"
+                        name="Área responsável *"
                         value={inputValues.area}
                         onChange={handleChange}
+                        labelClass="text-sm" // Decrease font size for label
                     />
+
                     <Input
-                        name='eventType'
-                        placeholder='Tipo de evento *'
+                        label="Tipo de evento"
+                        name="Tipo de evento *"
                         value={inputValues.eventType}
                         onChange={handleChange}
+                        labelClass="text-sm" // Decrease font size for label
                     />
-                    <Input
-                        name='description'
-                        placeholder='Descrição do evento *'
-                        value={inputValues.description}
-                        onChange={handleChange}
-                    />
+
+                    <label for="descricaoEvento" className="block text-sm font-medium text-gray-700">Descrição do Evento</label>
+                    <textarea 
+                    id="descricaoEvento"
+                    className="p-2 border border-black rounded-lg w-full mb-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+                    rows="4"
+                    ></textarea>
+
+
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white rounded p-2 w-[70px] hover:bg-blue-600 transition"
+                        className="bg-[#4856EE] text-white rounded-lg p-2 w-[120px] hover:bg-[#3d4bb5] transition absolute bottom-5 right-5"
                     >
                         Salvar
                     </button>
